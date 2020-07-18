@@ -4,8 +4,10 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
+const favicon = require('serve-favicon');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(favicon(path.join(__dirname, 'dist', 'img', 'favicon.ico')))
 
 app.use(express.static(path.join(__dirname + "/dist")));
 app.use(expressLayouts);
@@ -35,7 +37,7 @@ app.post("/submit", (req, res) => {
       
       const mailOptions = {
         from: 'francesgdev@gmail.com',
-        to: 'francesgdev@gmailcom',
+        to: 'francesgdev@gmail.com',
         subject: 'New message from your portfolio',
         html: output
       };
