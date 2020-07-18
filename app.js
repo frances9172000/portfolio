@@ -17,8 +17,8 @@ app.post("/submit", (req, res) => {
         secureConnection: false,
         port: 587,
         auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASS
+            user: 'francesg@outlook.ph',
+            pass: 'gonzales152000'
         },
         tls: {
             ciphers: 'SSLv3'
