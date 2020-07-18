@@ -10,6 +10,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname + "/dist")));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
+
+app.get('/', (req, res) => {
+    res.render('pages/home')
+});
+app.get('/about', (req, res) => {
+    res.render('pages/about')
+})
+app.get('/works', (req, res) => {
+    res.render('pages/works')
+})
+app.get('/contact', (req, res) => {
+    res.render('pages/contact')
+})
 app.post("/submit", (req, res) => {
     let output = `<h4>Name</h4><p>${req.body.name}</p><br><h4>Email</h4><p>${req.body.email}</p><br><h4>Message</h4><p>${req.body.message}</p>`;
     let transporter = nodemailer.createTransport({

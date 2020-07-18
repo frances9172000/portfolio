@@ -1,0 +1,68 @@
+<%- contentFor('body') %>
+<section class="works-page pages">
+   <div class="pages-cont">
+      <h1 class="pge-title">
+         My Works
+         <div class="title-line"></div>
+         <div class="title-line"></div>
+      </h1>
+
+      <div class="page-section-title">
+         <img class="page-section-icon" src="./img/works.png" alt="code">
+         <h3>My projects</h3>
+      </div>
+
+      <div class="projects-content">
+         <a href="#project1" class="works-img appear"></a>
+         <a href="https://www.portfolio-fgdev.herokuapp.com" target="_blank" class="works-img appear"></a>
+         <a href="#project3" class="works-img appear"></a>
+         <a href="https://strawberrysite.netlify.app" target="_blank" class="works-img appear"></a>
+      </div>
+
+      <div class="projects-details">
+         <a href="/contact">Contact me for more details of these <span class="fa fa-arrow-circle-right"></span></a>
+      </div>
+
+      <!-- Under Construction Sorry for the Inconvenience-->
+
+      <!--            <div class="page-section-title">
+         <img class="page-section-icon" src="./img/library.png" alt="code">
+         <h3>Libraries</h3>
+      </div>
+
+      <div class="libraries-desc appear">
+         <p>I also create front-end mini libraries, it makes my projects feel unique and my work
+            more efficient. Check it out on my github.</p>
+
+      </div>
+
+      <div class="libraries-content">
+         <div class="library appear">
+            <div class="library-img"></div>
+            <a href="#">SlideJS</a>
+         </div>
+         <div class="library appear">
+            <div class="library-img"></div>
+            <a href="#">ClickJS</a>
+         </div>
+         <div class="library appear">
+            <div class="library-img"></div>
+            <a href="#">ScrollJS</a>
+         </div>
+      </div>
+   </div>-->
+</section>
+
+<%- contentFor('script') %>
+<script>
+   window.addEventListener('load', () => {
+      $(".works-page .title-line").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+      $(".works-page .appear").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+      $('.under')[2].classList.add('ctive')
+
+   })
+</script>

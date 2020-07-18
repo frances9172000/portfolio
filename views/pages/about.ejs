@@ -1,0 +1,112 @@
+<%- contentFor('body') %>
+<section class="bout-pge pages">
+   <div class="pages-cont">
+      <h1 class="pge-title">
+         About Me
+         <div class="title-line"></div>
+         <div class="title-line"></div>
+      </h1>
+      <div class="me appear">
+         <div class="bout-img"></div>
+         <div class="me-desc">
+            <h1>Frances Gonzales</h1>
+            <div class="sm-icons-bout">
+               <a href="https://www.github.com/frances9172000" target="_blank" class="github">
+                  <div class="fab fa-github"></div>
+               </a>
+
+               <a href="https://codepen.io/frances17" target="_blank" class="codepen">
+                  <div class="fab fa-codepen"></div>
+               </a>
+
+               <a href="http://www.linkedin.com/in/frances-gonzales-98361719b" target="_blank" class="linkin">
+                  <div class="fab fa-linkedin"></div>
+               </a>
+            </div>
+
+            <p>
+               Hi!, I'm Frances Gonzales, creating beautiful website is
+               not just my expertise but also my hobby and passion. I love creating it and making it elegant but
+               also simple as possible. I experienced web developing for about 3 years now, gaining enough
+               knowledge and currently still mastering the art of coding. I'm also into graphic designs and
+               creating logos to make my projects more alive.
+            </p>
+         </div>
+      </div>
+
+      <div class="vl-most">
+         <div class="page-section-title">
+            <img class="page-section-icon" src="./img/code.png" alt="code">
+            <h1>How I code?</h1>
+         </div>
+         <div>
+            <div class="vl-most-crd appear">
+               <div class="crd-img"></div>
+               <h1>Responsiveness</h1>
+               <p>Fits in any device. Mobile-first development, that's one of my main objectives in creating a
+                  website.</p>
+            </div>
+            <div class="vl-most-crd appear">
+               <div class="crd-img"></div>
+               <h1>Simplicity</h1>
+               <p>Simplicity for beauty. Simple without any complexity will create harmony to users and clients.
+               </p>
+            </div>
+            <div class="vl-most-crd appear">
+               <div class="crd-img"></div>
+               <h1>Compatibility</h1>
+               <p>Works in any browser. Cross-browser compatiblity of any site is a must, that's why I equiped my
+                  projects with browser-friendly codes.</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="page-section-title">
+         <img class="page-section-icon" src="./img/idea.png" alt="code">
+         <h1>What I know?</h1>
+      </div>
+
+      <div class="knowledge appear">
+         <div class="lng">
+            <h1>Language I know</h1>
+            <div class="lng-icons">
+               <div><span class="fab fa-html5"></span> <span>HTML</span></div>
+               <div><span class="fab fa-css3"></span> <span>CSS</span></div>
+               <div><span class="fab fa-js"></span> <span>Javascript</span></div>
+            </div>
+         </div>
+         <div class="other-skill">
+            <h1>Other Skills</h1>
+            <div class="others-icons">
+               <div><span class="fab fa-adobe"></span> <span>Illustrator</span></div>
+               <div><span class="fab fa-node-js"></span> <span>NodeJs</span></div>
+               <div><span class="fab fa-bootstrap"></span> <span>Bootstrap</span></div>
+               <div><span class="fab fa-sass"></span> <span>Sass</span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="to-top-cont">
+      <a href="#nav" class="to-top fa fa-arrow-up"></a>
+      <h4>Back to top</h4>
+   </div>
+</section>
+
+<%- contentFor('script') %>
+<script>
+   window.addEventListener('load', () => {
+
+      $(".bout-pge .title-line").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+      $(".bout-pge .page-section-title").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+
+      $(".bout-pge .appear").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+      $('.under')[1].classList.add('ctive')
+   })
+</script>

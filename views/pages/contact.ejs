@@ -1,0 +1,93 @@
+<%- contentFor('body') %>
+<section class="contact-page pages">
+   <div class="pages-cont">
+      <h1 class="pge-title">
+         Contact Me
+         <div class="title-line"></div>
+         <div class="title-line"></div>
+      </h1>
+
+      <div class="page-section-title">
+         <img class="page-section-icon" src="./img/note.png" alt="code">
+         <h3>Direct contact</h3>
+      </div>
+
+      <div class="contact-desc appear">
+         <p>Want to hire me or collaborate with me?</p>
+      </div>
+
+      <form action="/submit" method="POST" class="contact-form appear">
+         <div class="form-actions">
+            <label for="name">Name</label>
+            <input class="name form-action" type="text" name="name" placeholder="Your Name">
+            <p class="form-error form-error-name"> </p>
+         </div>
+         <div class="form-actions">
+            <label for="email">Email</label>
+            <input class="email form-action" type="text" name="email" placeholder="Your Email">
+            <p class="form-error form-error-email"> </p>
+         </div>
+         <div class="form-actions">
+            <label for="message">Message</label>
+            <textarea class="message form-action" name="message" placeholder="Write your message"></textarea>
+            <p class="form-error form-error-message"> </p>
+         </div>
+         <input type="submit" value="Submit">
+      </form>
+
+      <div class="simple-divider">
+         <h1>or</h1>
+         <div class="divider-line"></div>
+      </div>
+
+      <div class="other-contact-desc appear">
+         <p>You can also contact me using gmail.</p>
+      </div>
+
+      <div class="gmail-cont appear">
+         <h3>francesgdev@gmail.com</h3>
+      </div>
+   </div>
+</section>
+
+<%- contentFor('script') %>
+<script>
+   window.addEventListener('load', () => {
+
+      $(".contact-page .title-line").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+      $(".appear").forEach(e => {
+         e.classList.toggle("ctive");
+      });
+      $('.under')[3].classList.add('ctive');
+
+      $(".contact-form").addEventListener("submit", event => {
+         $(".form-action").forEach((e, i) => {
+            let filtered = e.value
+               .split("")
+               .filter(e => e !== " ")
+               .join("");
+            if (filtered === "") {
+               event.preventDefault();
+               $(".form-error")[i].innerHTML = `Your ${e.getAttribute(
+                  "name"
+               )} is required`;
+            } else {
+               if (i === 1) {
+                  let regex = /\S+@\S+\.\S+/g;
+                  if (regex.test(e.value)) {
+                     $(".form-error")[i].innerHTML = " ";
+                  } else {
+                     event.preventDefault();
+                     $(".form-error")[i].innerHTML =
+                        "Please put a valid email address";
+                  }
+               } else {
+                  $(".form-error")[i].innerHTML = " ";
+               }
+            }
+         });
+      });
+   })
+</script>
