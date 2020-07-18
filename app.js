@@ -19,6 +19,9 @@ app.post("/submit", (req, res) => {
         auth: {
             user: process.env.EMAIL,
             pass: process.env.PASS
+        },
+        tls: {
+            ciphers: 'SSLv3'
         }
     });
 
