@@ -25,32 +25,30 @@ app.get('/contact', (req, res) => {
 })
 app.post("/submit", (req, res) => {
     let output = `<h4>Name</h4><p>${req.body.name}</p><br><h4>Email</h4><p>${req.body.email}</p><br><h4>Message</h4><p>${req.body.message}</p>`;
-    let transporter = nodemailer.createTransport({
-        host: "smtp-mail.outlook.com",
-        secureConnection: false,
-        port: 587,
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
         auth: {
-            user: 'francesg@outlook.ph',
-            pass: 'gonzales152000'
-        },
-        tls: {
-            ciphers: 'SSLv3'
+          user: process.env.EMAIL,
+          pass: process.env.PASS
         }
-    });
-
-    let mailOptions = {
-        from: '"franceG Portfolio" <francesg@outlook.ph>',
-        to: "francesgdev@gmail.com",
-        subject: "New message from your Portfolio",
+      });
+      
+      const mailOptions = {
+        from: 'francesgdev@gmail.com',
+        to: 'francesgdev@gmailcom',
+        subject: 'Invoices due',
         html: output
-    };
-
-    transporter.sendMail(mailOptions, function(error, info) {
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            return console.log(error);
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+          res.render('submitted')
         }
-        res.render("submitted");
-    });
+      });
+
 });
 
 const PORT = process.env.PORT || 5000;
