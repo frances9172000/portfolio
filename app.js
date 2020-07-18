@@ -36,7 +36,7 @@ app.post("/submit", (req, res) => {
       const mailOptions = {
         from: 'francesgdev@gmail.com',
         to: 'francesgdev@gmailcom',
-        subject: 'Invoices due',
+        subject: 'New message from your portfolio',
         html: output
       };
       
